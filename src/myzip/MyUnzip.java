@@ -55,6 +55,7 @@ public class MyUnzip {//空目录作为叶节点时，会被处理成文件
 //				System.out.println(entry.getName());
 //		}
 		System.out.println("在线更新");
+		System.out.println("本地库已更新");
 	}
 
 }
