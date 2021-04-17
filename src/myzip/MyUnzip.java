@@ -10,7 +10,7 @@ import java.util.zip.ZipEntry;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class MyUnzip {//¿ÕÄ¿Â¼×÷ÎªÒ¶½ÚµãÊ±£¬»á±»´¦Àí³ÉÎÄ¼ş
+public class MyUnzip {//ç©ºç›®å½•ä½œä¸ºå¶èŠ‚ç‚¹æ—¶ï¼Œä¼šè¢«å¤„ç†æˆæ–‡ä»¶
 
 	public static void unzip(String zipFrom, String fileTo) throws Exception {
 		ZipInputStream zipStream = new ZipInputStream(new FileInputStream(new File(zipFrom)));
@@ -22,20 +22,20 @@ public class MyUnzip {//¿ÕÄ¿Â¼×÷ÎªÒ¶½ÚµãÊ±£¬»á±»´¦Àí³ÉÎÄ¼ş
 			file = new File(fileTo + entry.getName());
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
-			} // µ¥¶À´´½¨¸¸Ä¿Â¼£¬·½±ãÏÂÃæ¿ÉÒÔÊ¹ÓÃOutputStream×Ô¶¯´´½¨×îµÍÒ»¼¶µÄÎÄ¼ş
+			} // å•ç‹¬åˆ›å»ºçˆ¶ç›®å½•ï¼Œæ–¹ä¾¿ä¸‹é¢å¯ä»¥ä½¿ç”¨OutputStreamè‡ªåŠ¨åˆ›å»ºæœ€ä½ä¸€çº§çš„æ–‡ä»¶
 			
-			//  ÉÏÒ»²½µ¥¶À´´½¨¸¸Ä¿Â¼ÊÇÎªÁËÕâÒ»²½Çø·Ö¿ªÎÄ¼şºÍÄ¿Â¼
+			//  ä¸Šä¸€æ­¥å•ç‹¬åˆ›å»ºçˆ¶ç›®å½•æ˜¯ä¸ºäº†è¿™ä¸€æ­¥åŒºåˆ†å¼€æ–‡ä»¶å’Œç›®å½•
 //			if (!file.exists()) {
-//				if (entry.isDirectory()) {// ¸ù¾İÑ¹ËõÎÄ¼şÖĞÌõÄ¿µÄÀà±ğ£¬À´¾ö¶¨ÊÇ´´½¨Ä¿Â¼»¹ÊÇÎÄ¼ş
+//				if (entry.isDirectory()) {// æ ¹æ®å‹ç¼©æ–‡ä»¶ä¸­æ¡ç›®çš„ç±»åˆ«ï¼Œæ¥å†³å®šæ˜¯åˆ›å»ºç›®å½•è¿˜æ˜¯æ–‡ä»¶
 //					file.mkdir();
 //				} else {
-//					file.createNewFile();// ´´½¨Êä³öÄ¿±êÎÄ¼ş
+//					file.createNewFile();// åˆ›å»ºè¾“å‡ºç›®æ ‡æ–‡ä»¶
 //				}
 //			}
 			
 			if (!entry.isDirectory()) {
 				in = zipFile.getInputStream(entry);
-				out = new FileOutputStream(file);// OutputStream×Ô´ø´´½¨ÎÄ¼ş¹¦ÄÜ£¬µ«Ö»ÄÜ´´½¨Ò»¼¶ÎÄ¼ş£¬¼´¸ÃÎÄ¼şµÄ¸¸Ä¿Â¼Ğè´æÔÚ
+				out = new FileOutputStream(file);// OutputStreamè‡ªå¸¦åˆ›å»ºæ–‡ä»¶åŠŸèƒ½ï¼Œä½†åªèƒ½åˆ›å»ºä¸€çº§æ–‡ä»¶ï¼Œå³è¯¥æ–‡ä»¶çš„çˆ¶ç›®å½•éœ€å­˜åœ¨
 				int temp;
 				while ((temp = in.read()) != -1) {
 					out.write(temp);
@@ -54,7 +54,7 @@ public class MyUnzip {//¿ÕÄ¿Â¼×÷ÎªÒ¶½ÚµãÊ±£¬»á±»´¦Àí³ÉÎÄ¼ş
 ////			if(entry.isDirectory())
 //				System.out.println(entry.getName());
 //		}
-		System.out.println("¸üĞÂ");
+		System.out.println("åœ¨çº¿æ›´æ–°");
 	}
 
 }
